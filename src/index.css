@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.header-wp .navbar-expand-lg .navbar-collapse {
+  display: flex!important;
+  flex-basis: auto;
+  justify-content: center;
+}
+.header-wp .nav-item {
+  margin-right: 32px;
+}
+.cmnbtn {
+  background: linear-gradient(to left, #2daab8 0%, #16bbe5 100%);
+  color: #fff;
+  font-weight: 500;
+  padding: 5px 18px;
+  border-radius: 5px;
+  border: 1.5px solid #14bef0;
+}
+.signinbtn {
+  color: #14bef0;
+  font-weight: 500;
+  padding: 7px 18px;
+  border-radius: 5px;
+  border: 1.5px solid #14bef0;
+  background: none;
+  margin-right: 10px;
+  text-decoration: none;
+}
+.header-wp {
+  border-bottom: double #f2f2f2;
+  padding: 8px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+  background: #fff;
+}
+.cmnbtn {
+  background-color: #14bef0;
+  border: 1.5px solid #14bef0;
+  color: #fff;
+  font-weight: 500;
+  padding: 5px 18px;
+  border-radius: 5px;
+}
+.userform-wp form {
+  box-shadow: 0px 0px 10px #ebebeb;
+  padding: 30px;
+  border-radius: 5px;
+  width: fit-content;
+  margin: 0 33%;
+}
+.userform-wp input {
+  padding: 6px 10px;
+  border: 1px solid #dadada;
+  border-radius: 4px;
+  width: 360px;
+}
+.banner-homewp img {
+  height: 500px;
+  object-fit: cover;
+}
+.banner-homewp .carousel-dark .carousel-indicators [data-bs-target] {
+  background-color: #14bef0;
+  height: 10px;
+  width: 40px;
+  border-radius: 12px;
+}
+.banner-homewp button.carousel-control-next {
+  display: none;
+}
+.banner-homewp button.carousel-control-prev {
+  display: none;
+}
+.book-appointmentwp .row {
+  box-shadow: 0px 0px 10px #ebebeb;
+  padding: 30px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+.banner-homewp {
+  margin-top: 60px;
+}
+.userform-wp {
+  margin-top: 150px !important;
+}
+.book-appointmentwp {
+  margin-top: 160px;
+}
+.doctorser-cmn img {
+  width: 100%;
+  max-width: 100px;
+  max-height: 100px;
+  background: linear-gradient(to left, #14bef02e 0%, #034ea266 100%);
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+.doctorser-cmn {
+  text-align: center;
+  padding: 25px 10px;
+  box-shadow: 0 0 25px rgba(24, 24, 24, .161);
+  border-radius: 25px;
+  background-size: cover;
+  margin: 20px 0;
+}
+.doctorser-cmn h6 {
+  font-weight: 500;
+  font-size: 18px;
+  margin: 7px 0;
+}
+.doctorser-cmn a {
+  text-decoration: none;
+  font-size: 14px;
+  background-image: linear-gradient(to right, #14bef0, #034ea2);
+  background-clip: text;
+  color: transparent;
+}
+.loginbtns ul {
+  padding: 0;
+}
+.loginbtns li {
+  display: inline-block;
+}
+.loginbtns {
+  text-align: center;
+}
+.loginbtns button {
+  font-weight: 500;
+  padding: 5px 18px;
+  border-radius: 5px;
+  border: 1.5px solid #14bef0;
+  background: none;
+  margin: 0px 6px;
+  width: 250px;
+  height: 45px;
+}
+.activebtn {
+  background: linear-gradient(to left, #2daab8 0%, #16bbe5 100%) !important;
+  border: 1.5px solid #14bef0;
+  color: #fff;
+  font-weight: 500;
+  padding: 5px 18px;
+  border-radius: 5px;
+}
+.doctor-appointmentmenus button {
+  width: 100%;
+  border: none;
+  padding: 8px 20px;
+  background: no-repeat;
+  text-align: start;
+}
+.doctor-dashbord,
+.doctorappointment-table,
+.doctor-ulala,
+.doctor-Ulala2 {
+    display: none;
+}
+.doctor-dashbord.active,
+.doctorappointment-table.active,
+.doctor-ulala.active,
+.doctor-Ulala2.active {
+    display: block;
+}
+.doctor-panelbody {
+  background: #98cbd63b;
+}
+.doctor-panelbody {
+  background: #98cbd63b;
+  height: 537px;
+}
+.doctor-appointmentmenus i {
+  margin-right: 5px;
+  font-size: 20px;
+}
+.doctor-appointmentmenus {
+  background: #fff;
+  padding: 46px 16px;
+  border-radius: 14px;
+  box-shadow: 0px 0px 10px #ededed;
+}
+.doctor-appointmentmenus button {
+  padding: 16px;
+  border-radius: 8px;
+}
+.doctorappointment-table th {
+  background: none;
+  color: #fff;
+  font-weight: 500;
+}
+div#prescriptionId .modal-header {
+  border: none;
+}
+.doctorappointment-table thead tr {
+  background: linear-gradient(to left, #2daab8 0%, #16bbe5 100%) !important;
+}
+.doctorappointment-table .table {
+  border-radius: 4px !important;
+  overflow: hidden;
+}
+.doctorappointment-table span {
+  cursor: pointer;
+}
+.doctorappointment-table .modal-header {
+  border: none;
+}
+div#editAppointment .modal-header {
+  border: none;
+}
+
+
+
+
+
+/* responsive css */
+/* responsive css */
+/* responsive css */
+
+
+@media only screen and (max-width: 992px) {
+  .navbar-collapse.collapse ul.navbar-nav {
+    display: none;
+  }
+  .navbar-collapse.collapse.show ul.navbar-nav {
+    display: block !important;
+  }
+  a.navbar-brand {
+    display: none;
+  }
+  .header-wp .navbar-expand-lg .navbar-collapse {
+    justify-content: end;
+  }
+}
