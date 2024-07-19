@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import '../customCss/doctorPanel.css';
 
-function DoctorPanel() {
+function Admin() {
 
     const [activeTab, setActiveTab] = useState(() => {
         const savedTab = localStorage.getItem('activeTab');
@@ -250,4 +250,4 @@ function DoctorPanel() {
     );
 }
 
-export default DoctorPanel;
+export default Admin;

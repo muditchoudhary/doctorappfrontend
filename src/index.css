@@ -2,16 +2,19 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  background-color: #98cbd63b;
 }
 
 .header-wp .navbar-expand-lg .navbar-collapse {
-  display: flex!important;
+  display: flex !important;
   flex-basis: auto;
   justify-content: center;
 }
-.header-wp .nav-item {
-  margin-right: 32px;
+
+.header-wp a {
+  font-size: 14px;
 }
+
 .cmnbtn {
   background: linear-gradient(to left, #2daab8 0%, #16bbe5 100%);
   color: #fff;
@@ -20,6 +23,7 @@ body {
   border-radius: 5px;
   border: 1.5px solid #14bef0;
 }
+
 .signinbtn {
   color: #14bef0;
   font-weight: 500;
@@ -30,6 +34,7 @@ body {
   margin-right: 10px;
   text-decoration: none;
 }
+
 .header-wp {
   border-bottom: double #f2f2f2;
   padding: 8px 0;
@@ -39,6 +44,7 @@ body {
   z-index: 9;
   background: #fff;
 }
+
 .cmnbtn {
   background-color: #14bef0;
   border: 1.5px solid #14bef0;
@@ -46,51 +52,66 @@ body {
   font-weight: 500;
   padding: 5px 18px;
   border-radius: 5px;
+  width: fit-content;
 }
+
 .userform-wp form {
   box-shadow: 0px 0px 10px #ebebeb;
   padding: 30px;
   border-radius: 5px;
+  width: -moz-fit-content;
   width: fit-content;
   margin: 0 33%;
+  background: #fff;
 }
+
 .userform-wp input {
   padding: 6px 10px;
   border: 1px solid #dadada;
   border-radius: 4px;
   width: 360px;
 }
+
 .banner-homewp img {
   height: 500px;
   object-fit: cover;
 }
+
 .banner-homewp .carousel-dark .carousel-indicators [data-bs-target] {
   background-color: #14bef0;
   height: 10px;
   width: 40px;
   border-radius: 12px;
 }
+
 .banner-homewp button.carousel-control-next {
   display: none;
 }
+
 .banner-homewp button.carousel-control-prev {
   display: none;
 }
+
 .book-appointmentwp .row {
   box-shadow: 0px 0px 10px #ebebeb;
   padding: 30px;
   margin-bottom: 10px;
   border-radius: 5px;
+  background: #fff;
 }
+
 .banner-homewp {
   margin-top: 60px;
 }
+
 .userform-wp {
   margin-top: 150px !important;
 }
+
 .book-appointmentwp {
   margin-top: 160px;
 }
+
 .doctorser-cmn img {
   width: 100%;
   max-width: 100px;
@@ -100,19 +121,22 @@ body {
   border-radius: 6px;
   margin-bottom: 10px;
 }
+
 .doctorser-cmn {
   text-align: center;
   padding: 25px 10px;
   box-shadow: 0 0 25px rgba(24, 24, 24, .161);
   border-radius: 25px;
-  background-size: cover;
   margin: 20px 0;
+  background: #fff;
 }
+
 .doctorser-cmn h6 {
   font-weight: 500;
   font-size: 18px;
   margin: 7px 0;
 }
+
 .doctorser-cmn a {
   text-decoration: none;
   font-size: 14px;
@@ -120,15 +144,19 @@ body {
   background-clip: text;
   color: transparent;
 }
+
 .loginbtns ul {
   padding: 0;
 }
+
 .loginbtns li {
   display: inline-block;
 }
+
 .loginbtns {
   text-align: center;
 }
+
 .loginbtns button {
   font-weight: 500;
   padding: 5px 18px;
@@ -139,6 +167,7 @@ body {
   width: 250px;
   height: 45px;
 }
+
 .activebtn {
   background: linear-gradient(to left, #2daab8 0%, #16bbe5 100%) !important;
   border: 1.5px solid #14bef0;
@@ -147,6 +176,7 @@ body {
   padding: 5px 18px;
   border-radius: 5px;
 }
+
 .doctor-appointmentmenus button {
   width: 100%;
   border: none;
@@ -154,64 +184,281 @@ body {
   background: no-repeat;
   text-align: start;
 }
+
 .doctor-dashbord,
 .doctorappointment-table,
 .doctor-ulala,
 .doctor-Ulala2 {
-    display: none;
+  display: none;
 }
+
 .doctor-dashbord.active,
 .doctorappointment-table.active,
 .doctor-ulala.active,
 .doctor-Ulala2.active {
-    display: block;
+  display: block;
 }
-.doctor-panelbody {
-  background: #98cbd63b;
-}
-.doctor-panelbody {
-  background: #98cbd63b;
-  height: 537px;
-}
+
 .doctor-appointmentmenus i {
   margin-right: 5px;
   font-size: 20px;
 }
+
 .doctor-appointmentmenus {
   background: #fff;
   padding: 46px 16px;
   border-radius: 14px;
   box-shadow: 0px 0px 10px #ededed;
+  height: 100%;
 }
+
 .doctor-appointmentmenus button {
   padding: 16px;
   border-radius: 8px;
 }
+
 .doctorappointment-table th {
   background: none;
   color: #fff;
   font-weight: 500;
 }
+
 div#prescriptionId .modal-header {
   border: none;
 }
+
 .doctorappointment-table thead tr {
   background: linear-gradient(to left, #2daab8 0%, #16bbe5 100%) !important;
 }
+
 .doctorappointment-table .table {
   border-radius: 4px !important;
   overflow: hidden;
 }
+
 .doctorappointment-table span {
   cursor: pointer;
 }
+
 .doctorappointment-table .modal-header {
   border: none;
 }
+
 div#editAppointment .modal-header {
   border: none;
 }
 
+.imgbg1 {
+  /* background-image: url(../src/imgs/bgimg.jpg); */
+  /* background-size: cover;
+  background-position: center; */
+  /* background-repeat: no-repeat; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.bgimg {
+  /* background-image: url(../src/imgs/bgimg.jpg);
+  background-size: cover;
+  background-position: center; */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.firstcard .card-body {
+  padding: 60px 20px;
+}
+
+.firstcard .card {
+  background: #ffffff80;
+}
+
+
+.admintext {
+  text-align: center;
+  font-size: xx-large;
+  margin: 10px;
+  color: #14bef0;
+  font-weight: 600;
+  margin-top: 50px;
+}
+
+.firstcardnew {
+  padding: 30px 26px;
+}
+
+.imgbg {
+  /* background-image: url(../src/imgs/bgimg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.backbg {
+  background: linear-gradient(to left, #14bef047 0%, #034ea259 100%);
+  padding: 1px;
+  height: 100%;
+}
+
+.doctorappointment-table .btn.btn-outline-info {
+  padding: 5px 8px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.doctorappointment-table button.btn.btn-light {
+  padding: 5px 8px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+
+/*  */
+
+#menuToggle {
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+
+  opacity: 0;
+  z-index: 2;
+
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #16bbe5;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked~span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #ffffff;
+}
+
+#menuToggle input:checked~span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked~span:nth-last-child(2) {
+  opacity: 1;
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+  position: absolute;
+  width: 400px;
+  margin: -100px 0 0 0;
+  padding: 50px;
+  padding-top: 125px;
+  right: -50px;
+  background: linear-gradient(to left, #2daab8 0%, #16bbe5 100%);
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+  height: 600px;
+}
+
+#menu li {
+  padding: 10px 0;
+  color: #fff;
+}
+
+#menu a {
+  text-decoration: none;
+}
+
+#menuToggle input:checked~ul {
+  transform: scale(1.0, 1.0);
+  opacity: 1;
+}
+
+.doctor-panelbody .bgimg {
+  padding: 0 16%;
+  display: block;
+}
+
+.activebtntwo {
+  background: linear-gradient(to left, #AFCFED 0%, #D5D8FC 100%) !important;
+  border: 1.5px solid #14bef0;
+  color: #000;
+  font-weight: 500;
+  padding: 5px 18px;
+  border-radius: 5px;
+}
+
+.form-check-input:checked {
+  background-color: #2daab8;
+  border-color: #2daab8;
+}
+
+.removebtn {
+  padding: 4px 8px;
+  font-size: 14px;
+}
+
+.doctor-panelbody thead tr {
+  background: linear-gradient(to left, #2daab8 0%, #16bbe5 100%) !important;
+}
+
+.doctor-panelbody th {
+  background: none;
+  color: #fff;
+  font-weight: 500;
+}
+
+.doctor-ulala table {
+  border-radius: 4px !important;
+  overflow: hidden;
+}
+.doctorappointment-table input {
+  height: 45px;
+}
 
 
 
@@ -220,18 +467,159 @@ div#editAppointment .modal-header {
 /* responsive css */
 /* responsive css */
 
+
+
+@media only screen and (max-width: 1200px) {
+  .userform-wp form {
+    margin: 0 31%;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .userform-wp form {
+    margin: 0 30%;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .userform-wp form {
+    margin: 0 29%;
+  }
+}
 
 @media only screen and (max-width: 992px) {
+  .doctorappointment-table .btn.btn-outline-info {
+    padding: 4px 5px;
+    font-size: 12px;
+    border-radius: 2px;
+  }
+
+  .doctorappointment-table button.btn.btn-light {
+    padding: 4px 5px;
+    font-size: 12px;
+    border-radius: 2px;
+  }
+
   .navbar-collapse.collapse ul.navbar-nav {
     display: none;
   }
+
+  .doctor-appointmentmenus button {
+    padding: 10px;
+    border-radius: 0;
+    font-size: 13px;
+  }
+
+  .doctor-appointmentmenus {
+    padding: 46px 0px;
+    border-radius: 5px;
+  }
+
+  .doctorappointment-table {
+    font-size: 14px;
+  }
+
+  .doctor-appointmentmenus i {
+    margin-right: 5px;
+    font-size: 15px;
+  }
+
+  .userform-wp form {
+    margin: 0 28%;
+  }
+
   .navbar-collapse.collapse.show ul.navbar-nav {
     display: block !important;
   }
+
   a.navbar-brand {
     display: none;
   }
+
   .header-wp .navbar-expand-lg .navbar-collapse {
     justify-content: end;
   }
 }
+
+@media only screen and (max-width: 900px) {
+  .loginbtns button {
+    width: 200px;
+  }
+
+  .userform-wp form {
+    margin: 0;
+  }
+
+  .userform-wp form {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .loginbtns button {
+    width: 170px;
+  }
+
+  section.bgimg .col-md-6 {
+    margin-bottom: 20px;
+  }
+
+  .doctor-panelbody .col-md-3 {
+    margin-bottom: 50px;
+  }
+
+  .doctor-appointmentmenus {
+    margin: 0 24%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .loginbtns button {
+    margin: 0 0 10px;
+  }
+
+  .doctor-appointmentmenus {
+    margin: 0 16%;
+  }
+
+  .doctorappointment-table {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .loginbtns li {
+    display: block;
+  }
+
+  .loginbtns button {
+    width: 100%;
+  }
+
+  .doctor-appointmentmenus {
+    margin: 0 0%;
+  }
+
+  .userform-wp input {
+    width: 100%;
+  }
+
+  .doctorappointment-table {
+    text-align: center;
+  }
+
+  .doctorappointment-table {
+    overflow: scroll;
+  }
+
+  .doctor-panelbody .col-md-9 {
+    padding: 0;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 414px) {}
+
+@media only screen and (max-width: 400px) {}

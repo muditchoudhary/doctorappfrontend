@@ -29,8 +29,24 @@ function NavBAr() {
                   <li className="nav-item">
                     <Link className="nav-link" to="/BookAppointment">Book a Appointment</Link>
                   </li>
+                  
                   <li className="nav-item">
-                    <Link className="nav-link" to="/DoctorPanel">Doctor Components</Link>
+                    <Link className="nav-link" to="/DoctorPanel">Doctor Dashbord</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/Adminpanel">Admin panel</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/Afterlogin">After login</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/Doctorregistration">Doctor Reg</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/Prescriptions">Prescriptions</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/doctosSidual">Doctos Sidual</Link>
                   </li>
                 </ul>
                 <form className="d-flex" role="search">
