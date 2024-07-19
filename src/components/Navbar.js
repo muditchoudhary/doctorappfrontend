@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Sidebar from "./home/Sidebar";
 
 function NavBAr() {
-  const auth = localStorage.getItem("user");
+  const auth = JSON.parse(localStorage.getItem("user"));
 
   const navigate = useNavigate();
+
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  function openSidebar() {
+    setSidebarOpen(true);
+  }
+
+  function closeSidebar() {
+    setSidebarOpen(false);
+  }
 
   const logout = () => {
     localStorage.clear();
@@ -51,9 +61,11 @@ function NavBAr() {
                     </Link>
                   </li>
                 </ul>
-                {auth ? (
+                {auth && auth.user ? (
                   <div>
-                    <p>welcome user</p>
+                    <Sidebar userName={auth.user.fullName} />
+
+                    {/* <p>welcome user</p> */}
                   </div>
                 ) : (
                   <form className="d-flex" role="search">
