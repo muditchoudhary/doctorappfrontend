@@ -34,11 +34,10 @@ function App() {
           element={<Doctorregistration />}
         />
         <Route path="/doctoslist" element={<doctoslist />} />
-        <Route path="/Adminpanel" element={<Adminpanel />} />
-        <Route path="/Afterlogin" element={<Afterlogin />} />
-        <Route path="/Doctorregistration" element={<Doctorregistration />} />
-        <Route path="/Prescriptions" element={<Prescriptions />} />
-        <Route path="/DoctorPanel" element={<DoctorPanel />} />
+        <Route path="/admin-panel" element={<Adminpanel />} />
+
+        <Route path="/prescriptions" element={<Prescriptions />} />
+        <Route path="/doctor-panel" element={<DoctorPanel />} />
       </Routes>
     </Router>
   );
