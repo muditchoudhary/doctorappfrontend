@@ -9,6 +9,13 @@ import Login from "./components/Login";
 import DoctorPanel from "./components/doctorPanel";
 import Doctorregistration from "./components/Doctorregistration";
 
+import doctoslist from "./components/doctoslist";
+
+import Adminpanel from "./components/Adminpanel";
+import Afterlogin from "./components/Afterlogin";
+
+import Prescriptions from "./components/Prescriptions";
+
 function App() {
   return (
     <Router>
@@ -26,9 +33,17 @@ function App() {
           path="/doctor/registration-form"
           element={<Doctorregistration />}
         />
+        <Route path="/doctoslist" element={<doctoslist />} />
+        <Route path="/Adminpanel" element={<Adminpanel />} />
+        <Route path="/Afterlogin" element={<Afterlogin />} />
+        <Route path="/Doctorregistration" element={<Doctorregistration />} />
+        <Route path="/Prescriptions" element={<Prescriptions />} />
+        <Route path="/DoctorPanel" element={<DoctorPanel />} />
       </Routes>
     </Router>
   );
 }
+
+// admin
 
 export default App;

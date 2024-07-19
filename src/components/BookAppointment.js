@@ -76,7 +76,7 @@ function BookAppointment() {
 
   return (
     <>
-      <div className="container book-appointmentwp">
+      <div className="container book-appointmentwp mb-5">
         <div className="text-center mt-5 mb-3">
           <h3>Book a Appointment</h3>
         </div>
