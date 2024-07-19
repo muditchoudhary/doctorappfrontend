@@ -36,3 +36,49 @@
     transform: rotate(360deg);
   }
 }
+
+.imgbg {
+  background-image: url(http://localhost:3000/static/media/bgimg.bcc5b6be8e957d2b77cf.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.backbg {
+  background: linear-gradient(to left, #14bef047 0%, #034ea259 100%);
+  padding: 1px;
+  height: 100%;
+}
+
+.text {
+  text-align: center;
+  font-size: xx-large;
+  margin: 10px;
+  color: #fff;
+  font-weight: 600;
+  margin-top: 50px;
+}
+
+.userform-wp form {
+  text-align: center;
+}
+.userform-wp input {
+  padding: 6px 10px;
+  border: 1px solid #dadada;
+  border-radius: 4px;
+  width: 360px;
+}
+
+.cmnbtn {
+  background: linear-gradient(to left, #14bef0 0%, #034ea2 100%);
+  border: 1.5px solid #14bef0;
+  color: #fff;
+  font-weight: 500;
+  padding: 5px 18px;
+  border-radius: 5px;
+}
