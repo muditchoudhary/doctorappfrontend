@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../customCss/doctorPanel.css";
 import { useNavigate } from "react-router-dom";
 import { BACKEND_URL } from "../gloalConstant";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 function Adminpanel() {
   const [activeTab, setActiveTab] = useState(() => {
@@ -41,6 +42,7 @@ function Adminpanel() {
   const [status, setStatus] = useState(false);
 
   const navigate = useNavigate();
+  const { dispatch } = useAuthContext();
 
   useEffect(() => {
     fetchDoctorList();
@@ -109,7 +111,8 @@ function Adminpanel() {
   };
 
   const logout = () => {
-    localStorage.clear();
+    localStorage.removeItem("user");
+    dispatch({ type: "LOGOUT", payload: false });
     navigate("/login");
   };
 

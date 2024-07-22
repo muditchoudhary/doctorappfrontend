@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { BACKEND_URL } from "../gloalConstant";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
+  const { dispatch } = useAuthContext();
 
   useEffect(() => {
     const auth = localStorage.getItem("user");
@@ -40,6 +42,7 @@ export default function Login() {
 
       if (result) {
         localStorage.setItem("user", JSON.stringify(result));
+        dispatch({ type: "LOGIN", payload: result });
         navigate("/");
         alert("Welcome " + result.user.fullName);
       } else {
@@ -75,6 +78,7 @@ export default function Login() {
 
       if (result) {
         localStorage.setItem("user", JSON.stringify(result));
+        dispatch({ type: "LOGIN", payload: result });
         navigate("/admin-panel");
         alert("Welcome " + result.admin.fullName);
       } else {
@@ -112,6 +116,7 @@ export default function Login() {
 
       if (result) {
         localStorage.setItem("user", JSON.stringify(result));
+        dispatch({ type: "LOGIN", payload: result });
         navigate("/doctor-panel");
         alert("Welcome " + result.doctor.fullName);
       } else {

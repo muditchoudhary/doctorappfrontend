@@ -29,7 +29,7 @@ function UserSignUp() {
 
       localStorage.setItem("user", JSON.stringify(data));
       if (data) {
-        navigate("/Login");
+        navigate("/login");
         alert("User registered");
       }
     } catch (error) {

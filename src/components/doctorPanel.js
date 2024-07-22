@@ -6,6 +6,7 @@ import "../customCss/doctorPanel.css";
 import Appointments from "./doctorPanel/Appointments";
 import EditPrescriptionModal from "./doctorPanel/EditPrescriptionModal";
 import WritePrescriptionModal from "./doctorPanel/WritePrescriptionModal";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 function DoctorPanel() {
   const [activeTab, setActiveTab] = useState(() => {
@@ -16,6 +17,7 @@ function DoctorPanel() {
   const [currentApptId, setCurrentApptId] = useState(null);
 
   const navigate = useNavigate();
+  const { dispatch } = useAuthContext();
 
   const handleButtonClick = (tabName) => {
     setActiveTab(tabName);
@@ -49,7 +51,8 @@ function DoctorPanel() {
   }
 
   function onDoctorLogout() {
-    localStorage.clear("user");
+    localStorage.removeItem("user");
+    dispatch({ type: "LOGOUT", payload: false });
     navigate("/login");
   }
 

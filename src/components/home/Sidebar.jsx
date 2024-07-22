@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import {
   useDisclosure,
   Button,
@@ -13,12 +14,13 @@ import {
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useNavigate } from "react-router-dom";
 
-import { useRef } from "react";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 function Sidebar({ userName }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
   const navigate = useNavigate();
+  const { dispatch } = useAuthContext();
 
   function onBookAppointment() {
     navigate("/user/book-appointment");
@@ -31,7 +33,8 @@ function Sidebar({ userName }) {
   }
 
   function onLogout() {
-    localStorage.clear("user");
+    localStorage.removeItem("user");
+    dispatch({ type: "LOGOUT", payload: false });
     onClose();
     navigate("/");
   }

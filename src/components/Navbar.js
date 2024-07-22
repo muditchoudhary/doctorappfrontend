@@ -64,13 +64,16 @@ function NavBAr() {
                 {auth && auth.user ? (
                   <div>
                     <Sidebar userName={auth.user.fullName} />
-
-                    {/* <p>welcome user</p> */}
                   </div>
                 ) : (
                   <div>
-                    {auth && auth.doctor ? (
-                      <p>Welcome! {auth.doctor.fullName}</p>
+                    {auth && (auth.doctor || auth.admin) ? (
+                      <p>
+                        Welcome!{" "}
+                        {auth.doctor
+                          ? auth.doctor.fullName
+                          : auth.admin.fullName}
+                      </p>
                     ) : (
                       <form className="d-flex" role="search">
                         <div className="text-end">
