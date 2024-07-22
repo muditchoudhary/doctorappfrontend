@@ -74,7 +74,7 @@ function Adminpanel() {
 
       if (data) {
         alert("Doctor Registered Successfully");
-        navigate("/admin-panel.Dashboard");
+        navigate("/admin-panel");
       }
     } catch (error) {
       console.log(error);
@@ -348,9 +348,7 @@ function Adminpanel() {
                       : "doctor-ulala"
                   }
                 >
-                  <h5 className="text-center mb-4 mt-5">
-                    Doctors Appointments
-                  </h5>
+                  <h5 className="text-center mb-4 mt-5">Doctors List</h5>
                   <table className="table">
                     <thead>
                       <tr>
