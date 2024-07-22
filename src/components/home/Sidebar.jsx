@@ -28,7 +28,7 @@ function Sidebar({ userName }) {
   }
 
   function onViewPrescription() {
-    // will navigate to prescription page
+    navigate("/user/prescription");
     onClose();
   }
 
