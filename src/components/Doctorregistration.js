@@ -15,6 +15,7 @@ export default function Doctorregistration() {
 
     if (!name || !email || !password || !specialisation) {
       alert("Please Fill All The Fields");
+      return;
     }
 
     try {
