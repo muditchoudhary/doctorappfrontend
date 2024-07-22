@@ -14,30 +14,30 @@ import doctoslist from "./components/doctoslist";
 import Adminpanel from "./components/Adminpanel";
 import Afterlogin from "./components/Afterlogin";
 
-import Prescriptions from "./components/Prescriptions";
-
+import Prescription from "./components/Prescription";
 function App() {
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/user/registration" element={<UserSignUp />} />
-        <Route path="/user/book-appointment" element={<BookAppointment />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/doctor-panel" element={<DoctorPanel />} />
-        <Route path="/admin-panel" element={<p>hello</p>} />
-        {/* Use correct component name */}
+        <Route path="/user/book-appointment" element={<BookAppointment />} />
+        <Route path="/doctoslist" element={<doctoslist />} />
+        <Route path="/admin-panel" element={<Adminpanel />} />
+        <Route path="/doctor-panel" element={<DoctorPanel />} />
+        <Route path="/user/prescription" element={<Prescription />} />
         <Route
           path="/doctor/registration-form"
           element={<Doctorregistration />}
         />
-        <Route path="/doctoslist" element={<doctoslist />} />
-        <Route path="/admin-panel" element={<Adminpanel />} />
 
-        <Route path="/prescriptions" element={<Prescriptions />} />
-        <Route path="/doctor-panel" element={<DoctorPanel />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/user/registration" element={<UserSignUp />} />
+
+        <Route path="/login" element={<Login />} />
+
+        {/* Use correct component name */}
       </Routes>
     </Router>
   );
