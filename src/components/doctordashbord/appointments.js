@@ -1,20 +1,8 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
+import { Link } from "react-router-dom";
 
-import '../customCss/doctorPanel.css';
+function DoctorDashboard() {
 
-function DoctorPanel() {
-
-    const [activeTab, setActiveTab] = useState(() => {
-        const savedTab = localStorage.getItem('activeTab');
-        return savedTab || 'Dashboard';
-    });
-
-    const handleButtonClick = (tabName) => {
-        setActiveTab(tabName);
-        localStorage.setItem('activeTab', tabName);
-    };
-
-    
     const [textarea, setTextarea] = useState('')
 
     function prescriptionSubmit() {
@@ -40,37 +28,28 @@ function DoctorPanel() {
     }
     
     
-
     return (
         <>
+
+
             <div className="doctor-panelbody pt-3 mt-5">
                 <div className="container-fluid">
                     <div className="pt-5">
                         <div className="row">
                             <div className="col-md-3">
                                 <div className="doctor-appointmentmenus">
-                                    <button className={activeTab === 'Dashboard' ? 'activebtn' : ''} onClick={() => handleButtonClick('Dashboard')}>
+                                    <Link
+                                        to="/DoctorDashboard">
                                         <i className="fa-solid fa-house"></i> Dashboard
-                                    </button><br />
-                                    <button className={activeTab === 'Appointment' ? 'activebtn' : ''} onClick={() => handleButtonClick('Appointment')}>
-                                        <i className="fa-solid fa-calendar-check"></i> Appointments
-                                    </button><br />
-                                    <button className={activeTab === 'Ulala' ? 'activebtn' : ''} onClick={() => handleButtonClick('Ulala')}>
-                                        <i className="fa-solid fa-wand-magic-sparkles"></i> Past Appointments
-                                    </button><br />
-                                    <button className={activeTab === 'Ulala2' ? 'activebtn' : ''} onClick={() => handleButtonClick('Ulala2')}>
-                                        <i className="fa-solid fa-wand-magic-sparkles"></i> Cancel Appointments
-                                    </button><br />
+                                    </Link><br /><br />
+                                    <Link to="/Appointments"
+                                        style={{ background: "linear-gradient(to left, #2daab8 0%, #16bbe5 100%)", color: "#fff", fontWeight: 500, padding: "16px", borderRadius: "8px", textDecoration: "none", display: "inline-block", }}><i className="fa-solid fa-calendar-check"></i> Appointments</Link><br /><br />
+                                    <Link to="/PastAppointments"><i className="fa-solid fa-wand-magic-sparkles"></i> Past Appointments</Link><br /><br />
+                                    <Link to="/CancelAppointments"><i className="fa-solid fa-wand-magic-sparkles"></i> Cancel Appointments</Link><br /><br />
                                 </div>
                             </div>
                             <div className="col-md-9">
-                                <div className={activeTab === 'Dashboard' ? 'doctor-dashbord active' : 'doctor-dashbord'}>
-                                    <h4>Dashboard</h4>
-                                </div>
-                                <div className={activeTab === 'Appointment' ? 'doctorappointment-table active' : 'doctorappointment-table'}>
-                                    <div className="text-center mb-4">
-                                        <h5>All Appointment</h5>
-                                    </div>
+                                <div className="text-center">
                                     <table className="table">
                                         <thead>
                                             <tr>
@@ -172,17 +151,14 @@ function DoctorPanel() {
                                         </tbody>
                                     </table>
                                 </div>
-                                <div className={activeTab === 'Ulala' ? 'doctor-ulala active' : 'doctor-ulala'}>
-                                    <h4>Cancel Appointments</h4>
-                                </div>
-                                <div className={activeTab === 'Ulala2' ? 'doctor-Ulala2 active' : 'doctor-Ulala2'}>
-                                    <h4>Past Appointments</h4>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+
 
 
             {/* Modals */}
@@ -202,7 +178,7 @@ function DoctorPanel() {
                         <div className="modal-body text-center">
                             <form>
                                 <div className="mb-4">
-                                    <textarea placeholder="Prescription" className="form-control" aria-label="With textarea" rows="5" onChange={(e) => { setTextarea(e.target.value) }} required></textarea>
+                                    <textarea placeholder="Prescription" className="form-control" aria-label="With textarea" rows="5" onChange={(e) => setTextarea(e.target.value) } required></textarea>
                                 </div>
                                 <button type="submit" onClick={prescriptionSubmit} className="cmnbtn">Submit</button>
                             </form>
@@ -245,9 +221,9 @@ function DoctorPanel() {
                 </div>
             </div>
 
-        </>
 
+        </>
     );
 }
 
-export default DoctorPanel;
+export default DoctorDashboard;

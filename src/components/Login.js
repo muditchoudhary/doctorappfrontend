@@ -61,10 +61,10 @@ export default function Login() {
                             </div>
                             <form>
                                 <div className="mb-3">
-                                    <input type="email" onChange={(e) => { setEmail(e.target.value) }} placeholder="Email" />
+                                    <input type="email" onChange={(e) => setEmail(e.target.value) } placeholder="Email" />
                                 </div>
                                 <div className="mb-3">
-                                    <input type="password" onChange={(e) => { setPassword(e.target.value) }} placeholder="Password" />
+                                    <input type="password" onChange={(e) => setPassword(e.target.value) } placeholder="Password" />
                                 </div>
                                 <div className="mb-3">
                                     <button className='cmnbtn' type='button' onClick={userLogin}>Login</button>
@@ -77,10 +77,10 @@ export default function Login() {
                             </div>
                             <form>
                                 <div className="mb-3">
-                                    <input type="email" onChange={(e) => { setEmail(e.target.value) }} placeholder="Email" />
+                                    <input type="email" onChange={(e) => setEmail(e.target.value) } placeholder="Email" />
                                 </div>
                                 <div className="mb-3">
-                                    <input type="password" onChange={(e) => { setPassword(e.target.value) }} placeholder="Password" />
+                                    <input type="password" onChange={(e) => setPassword(e.target.value) } placeholder="Password" />
                                 </div>
                                 <div className="mb-3">
                                     <button className='cmnbtn' type='button' onClick={userLogin}>Login</button>
@@ -94,10 +94,10 @@ export default function Login() {
                             </div>
                             <form>
                                 <div className="mb-3">
-                                    <input type="email" onChange={(e) => { setEmail(e.target.value) }} placeholder="Email" />
+                                    <input type="email" onChange={(e) => setEmail(e.target.value) } placeholder="Email" />
                                 </div>
                                 <div className="mb-3">
-                                    <input type="password" onChange={(e) => { setPassword(e.target.value) }} placeholder="Password" />
+                                    <input type="password" onChange={(e) => setPassword(e.target.value) } placeholder="Password" />
                                 </div>
                                 <div className="mb-3">
                                     <button className='cmnbtn' type='button' onClick={userLogin}>Login</button>

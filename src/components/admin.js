@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import '../customCss/doctorPanel.css';
+// import '../customCss/doctorPanel.css';
 
 function Admin() {
 
@@ -44,7 +44,7 @@ function Admin() {
     return (
         <>
             <div className="doctor-panelbody pt-3 mt-5">
-                <div className="container-fluid">
+                <div className="container">
                     <div className="pt-5">
                         <div className="row">
                             <div className="col-md-3">
