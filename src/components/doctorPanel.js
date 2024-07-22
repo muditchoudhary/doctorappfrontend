@@ -1,13 +1,21 @@
 import React, { useState } from "react";
+import { Button } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 import "../customCss/doctorPanel.css";
 import Appointments from "./doctorPanel/Appointments";
+import EditPrescriptionModal from "./doctorPanel/EditPrescriptionModal";
+import WritePrescriptionModal from "./doctorPanel/WritePrescriptionModal";
 
 function DoctorPanel() {
   const [activeTab, setActiveTab] = useState(() => {
     const savedTab = localStorage.getItem("activeTab");
     return savedTab || "Dashboard";
   });
+  const [appointments, setAppointments] = useState(null);
+  const [currentApptId, setCurrentApptId] = useState(null);
+
+  const navigate = useNavigate();
 
   const handleButtonClick = (tabName) => {
     setActiveTab(tabName);
@@ -40,6 +48,11 @@ function DoctorPanel() {
     }
   }
 
+  function onDoctorLogout() {
+    localStorage.clear("user");
+    navigate("/login");
+  }
+
   return (
     <>
       <div className="doctor-panelbody pt-3 mt-5">
@@ -48,12 +61,12 @@ function DoctorPanel() {
             <div className="row">
               <div className="col-md-3">
                 <div className="doctor-appointmentmenus">
-                  <button
+                  {/* <button
                     className={activeTab === "Dashboard" ? "activebtn" : ""}
                     onClick={() => handleButtonClick("Dashboard")}
                   >
                     <i className="fa-solid fa-house"></i> Dashboard
-                  </button>
+                  </button> */}
                   <br />
                   <button
                     className={activeTab === "Appointment" ? "activebtn" : ""}
@@ -62,26 +75,12 @@ function DoctorPanel() {
                     <i className="fa-solid fa-calendar-check"></i> Appointments
                   </button>
                   <br />
-                  <button
-                    className={activeTab === "Ulala" ? "activebtn" : ""}
-                    onClick={() => handleButtonClick("Ulala")}
-                  >
-                    <i className="fa-solid fa-wand-magic-sparkles"></i> Past
-                    Appointments
-                  </button>
                   <br />
-                  <button
-                    className={activeTab === "Ulala2" ? "activebtn" : ""}
-                    onClick={() => handleButtonClick("Ulala2")}
-                  >
-                    <i className="fa-solid fa-wand-magic-sparkles"></i> Cancel
-                    Appointments
-                  </button>
-                  <br />
+                  <Button onClick={() => onDoctorLogout()}>Log out</Button>
                 </div>
               </div>
               <div className="col-md-9">
-                <div
+                {/* <div
                   className={
                     activeTab === "Dashboard"
                       ? "doctor-dashbord active"
@@ -89,7 +88,7 @@ function DoctorPanel() {
                   }
                 >
                   <h4>Dashboard</h4>
-                </div>
+                </div> */}
                 <div
                   className={
                     activeTab === "Appointment"
@@ -100,7 +99,11 @@ function DoctorPanel() {
                   <div className="text-center mb-4">
                     <h5>All Appointment</h5>
                   </div>
-                  <Appointments />
+                  <Appointments
+                    appointments={appointments}
+                    setAppointments={setAppointments}
+                    setCurrentApptId={setCurrentApptId}
+                  />
                 </div>
                 <div
                   className={
@@ -126,119 +129,17 @@ function DoctorPanel() {
         </div>
       </div>
 
-      {/* Modals */}
-      {/* Modals */}
-      {/* Modals */}
-      {/* Modals */}
+      <WritePrescriptionModal
+        appointments={appointments}
+        currentApptId={currentApptId}
+        setAppointments={setAppointments}
+      />
 
-      {/* edit_appointment_modal */}
-
-      <div
-        className="modal fade"
-        id="editAppointment"
-        tabIndex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div className="modal-body text-center">
-              <form>
-                <div className="mb-4">
-                  <textarea
-                    placeholder="Prescription"
-                    className="form-control"
-                    aria-label="With textarea"
-                    rows="5"
-                    onChange={(e) => {
-                      setTextarea(e.target.value);
-                    }}
-                    required
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  onClick={prescriptionSubmit}
-                  className="cmnbtn"
-                >
-                  Submit
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* edit_modal */}
-
-      <div
-        className="modal fade"
-        id="prescriptionId"
-        tabIndex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div className="modal-body text-center">
-              <div className="text-start">
-                <form>
-                  <h6>Name</h6>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Rahul Shukla"
-                    aria-label="Username"
-                    aria-describedby="basic-addon1"
-                    disabled
-                  />
-                  <br />
-                  <h6>Date</h6>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="12/07/2024"
-                    aria-label="Username"
-                    aria-describedby="basic-addon1"
-                    disabled
-                  />
-                  <br />
-                  <h6>Time</h6>
-                  <select
-                    class="form-select"
-                    aria-label="Default select example"
-                  >
-                    <option selected>Edit Time</option>
-                    <option value="1pm to 2pm">1pm to 2pm</option>
-                    <option value="3pm to 4pm">3pm to 4pm</option>
-                    <option value="4.30pm to 5.30pm">4.30pm to 5.30pm</option>
-                  </select>
-                  <br />
-                  <button className="cmnbtn" type="submit">
-                    Submit
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <EditPrescriptionModal
+        appointments={appointments}
+        currentApptId={currentApptId}
+        setAppointments={setAppointments}
+      />
     </>
   );
 }

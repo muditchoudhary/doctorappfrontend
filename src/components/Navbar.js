@@ -68,16 +68,22 @@ function NavBAr() {
                     {/* <p>welcome user</p> */}
                   </div>
                 ) : (
-                  <form className="d-flex" role="search">
-                    <div className="text-end">
-                      <Link className="signinbtn" to="/login">
-                        Log in
-                      </Link>
-                      <Link className="signinbtn" to="/user/registration">
-                        User Singup
-                      </Link>
-                    </div>
-                  </form>
+                  <div>
+                    {auth && auth.doctor ? (
+                      <p>Welcome! {auth.doctor.fullName}</p>
+                    ) : (
+                      <form className="d-flex" role="search">
+                        <div className="text-end">
+                          <Link className="signinbtn" to="/login">
+                            Log in
+                          </Link>
+                          <Link className="signinbtn" to="/user/registration">
+                            User Singup
+                          </Link>
+                        </div>
+                      </form>
+                    )}
+                  </div>
                 )}
               </div>
             </div>

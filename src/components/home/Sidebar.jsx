@@ -8,7 +8,6 @@ import {
   DrawerHeader,
   DrawerBody,
   DrawerFooter,
-  Input,
   IconButton,
 } from "@chakra-ui/react";
 import { RxHamburgerMenu } from "react-icons/rx";

@@ -4,14 +4,13 @@ import { Spinner } from "@chakra-ui/react";
 import { BACKEND_URL } from "../../gloalConstant";
 import Appointment from "./Appointment";
 
-function Appointments() {
-  const [appointments, setAppointments] = useState(null);
+function Appointments({ appointments, setAppointments, setCurrentApptId }) {
   const [isLoading, setIsLoading] = useState(false);
   const fetchAppointments = async () => {
     try {
       setIsLoading(true);
       const auth = JSON.parse(localStorage.getItem("user"));
-      console.log(auth);
+      // console.log(auth);
       if (!auth || !auth.token) {
         throw new Error("No auth token found");
       }
@@ -29,7 +28,7 @@ function Appointments() {
       }
 
       const results = await response.json();
-      console.log(results);
+      // console.log(results);
 
       setAppointments(results.appointments);
     } catch (error) {
@@ -50,7 +49,11 @@ function Appointments() {
           <Spinner />
         </div>
       ) : (
-        <Appointment appointments={appointments} />
+        <Appointment
+          appointments={appointments}
+          setCurrentApptId={setCurrentApptId}
+          setAppointments={setAppointments}
+        />
       )}
     </>
   );
