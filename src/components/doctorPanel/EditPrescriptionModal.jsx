@@ -9,10 +9,13 @@ function EditPrescriptionModal({
 }) {
   const [currentApt, setCurrentApt] = useState(null);
   const [appointmentAt, setAppointmentAt] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
   async function onEditSubmit(e) {
     e.preventDefault();
     const auth = JSON.parse(localStorage.getItem("user"));
     try {
+      setIsLoading(true);
       let result = await fetch(`${BACKEND_URL}/doctor/appointment/edit`, {
         method: "put",
         body: JSON.stringify({
@@ -52,6 +55,8 @@ function EditPrescriptionModal({
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      setIsLoading(false);
     }
   }
 

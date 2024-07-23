@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { HashLoader } from "react-spinners";
+
 import { BACKEND_URL } from "../gloalConstant";
 import { useNavigate } from "react-router-dom";
 
@@ -7,11 +9,13 @@ function BookAppointment() {
   const [docList, setDocList] = useState([]);
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
 
   const fetchDoctorList = async () => {
     try {
+      setIsLoading(true);
       const auth = JSON.parse(localStorage.getItem("user"));
       if (!auth || !auth.token) {
         throw new Error("No auth token found");
@@ -34,6 +38,8 @@ function BookAppointment() {
       setDocList(results.doctors);
     } catch (error) {
       console.error("Fetch error: ", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -50,6 +56,7 @@ function BookAppointment() {
 
     const auth = JSON.parse(localStorage.getItem("user"));
     try {
+      setIsLoading(true);
       let result = await fetch(`${BACKEND_URL}/user/appointment/new`, {
         method: "post",
         body: JSON.stringify({
@@ -71,11 +78,18 @@ function BookAppointment() {
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      setIsLoading(false);
     }
   }
 
   return (
     <>
+      {isLoading && (
+        <div className="loading-container">
+          <HashLoader color="#1D3557" />
+        </div>
+      )}
       <div className="container book-appointmentwp mb-5">
         <div className="text-center mt-5 mb-3">
           <h3>Book a Appointment</h3>

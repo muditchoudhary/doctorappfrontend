@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from "react";
-import styles from "../Prescription.module.css";
-import { BACKEND_URL } from "../gloalConstant";
-
 import {
   Accordion,
   AccordionItem,
@@ -10,9 +7,14 @@ import {
   AccordionIcon,
   Box,
 } from "@chakra-ui/react";
+import { HashLoader } from "react-spinners";
+
+import styles from "../Prescription.module.css";
+import { BACKEND_URL } from "../gloalConstant";
 
 export default function Prescription() {
   const [prescription, setPrescription] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     getPrescription();
@@ -21,6 +23,7 @@ export default function Prescription() {
   console.log(auth.user.fullName);
   async function getPrescription() {
     try {
+      setIsLoading(true);
       if (!auth || !auth.token) {
         throw new Error("No auth token found");
       }
@@ -43,12 +46,19 @@ export default function Prescription() {
     } catch (error) {
       console.error("Fetch error: ", error);
       setPrescription([]);
+    } finally {
+      setIsLoading(false);
     }
   }
   console.log(prescription);
 
   return (
     <>
+      {isLoading && (
+        <div className="loading-container">
+          <HashLoader color="#1D3557" />
+        </div>
+      )}
       <div className="text-center mt-5 mb-3">
         <p className="h1">My Prescriptions</p>
       </div>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Spinner } from "@chakra-ui/react";
+import { HashLoader } from "react-spinners";
 
 import { BACKEND_URL } from "../../gloalConstant";
 import Appointment from "./Appointment";
@@ -45,8 +45,8 @@ function Appointments({ appointments, setAppointments, setCurrentApptId }) {
   return (
     <>
       {isLoading ? (
-        <div>
-          <Spinner />
+        <div className="loading-container">
+          <HashLoader color="#1D3557" />
         </div>
       ) : (
         <Appointment

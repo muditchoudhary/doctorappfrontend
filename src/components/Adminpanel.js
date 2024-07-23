@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import "../customCss/doctorPanel.css";
 import { useNavigate } from "react-router-dom";
 import { BACKEND_URL } from "../gloalConstant";
@@ -9,6 +10,7 @@ function Adminpanel() {
     const savedTab = localStorage.getItem("activeTab");
     return savedTab || "Dashboard";
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleButtonClick = (tabName) => {
     setActiveTab(tabName);
@@ -39,7 +41,6 @@ function Adminpanel() {
   const [password, setPassword] = useState("");
   const [specialisation, setSpecialisation] = useState("");
   const [docList, setDocList] = useState([]);
-  const [status, setStatus] = useState(false);
 
   const navigate = useNavigate();
   const { dispatch } = useAuthContext();
@@ -58,6 +59,7 @@ function Adminpanel() {
     const auth = JSON.parse(localStorage.getItem("user"));
     console.log(auth.token);
     try {
+      setIsLoading(true);
       let result = await fetch(`${BACKEND_URL}/admin/doctor/register`, {
         method: "post",
         body: JSON.stringify({
@@ -80,6 +82,8 @@ function Adminpanel() {
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      setIsLoading(false);
     }
   }
 

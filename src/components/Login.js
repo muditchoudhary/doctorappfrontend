@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { HashLoader } from "react-spinners";
 
 import { BACKEND_URL } from "../gloalConstant";
 import { useAuthContext } from "../hooks/useAuthContext";
 
+import "../customCss/loader.css";
+
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
   const { dispatch } = useAuthContext();
@@ -26,6 +30,7 @@ export default function Login() {
     }
 
     try {
+      setIsLoading(true);
       let response = await fetch(`${BACKEND_URL}/user/login`, {
         method: "POST",
         body: JSON.stringify({ email, password }),
@@ -51,6 +56,8 @@ export default function Login() {
     } catch (error) {
       console.error("There was an error during the fetch operation:", error);
       alert("An error occurred. Please try again.");
+    } finally {
+      setIsLoading(false);
     }
   }
 
@@ -62,6 +69,7 @@ export default function Login() {
     }
 
     try {
+      setIsLoading(true);
       let response = await fetch(`${BACKEND_URL}/admin/login`, {
         method: "POST",
         body: JSON.stringify({ email, password }),
@@ -89,6 +97,8 @@ export default function Login() {
       console.log(error);
       console.error("There was an error during the fetch operation:", error);
       alert("An error occurred. Please try again.");
+    } finally {
+      setIsLoading(false);
     }
   }
 
@@ -100,6 +110,7 @@ export default function Login() {
     }
 
     try {
+      setIsLoading(true);
       let response = await fetch(`${BACKEND_URL}/doctor/login`, {
         method: "POST",
         body: JSON.stringify({ email, password }),
@@ -127,6 +138,8 @@ export default function Login() {
       console.log(error);
       console.error("There was an error during the fetch operation:", error);
       alert("An error occurred. Please try again.");
+    } finally {
+      setIsLoading(false);
     }
   }
 
@@ -137,6 +150,11 @@ export default function Login() {
 
   return (
     <>
+      {isLoading && (
+        <div className="loading-container">
+          <HashLoader color="#1D3557" />
+        </div>
+      )}
       <section>
         <div className="userform-wp mt-3 mb-3">
           <div className="container-fluid">

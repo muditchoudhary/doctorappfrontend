@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { HashLoader } from "react-spinners";
 
 import { BACKEND_URL } from "../gloalConstant";
+import "../customCss/loader.css";
 
 function UserSignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   async function userFormSubmit(e) {
@@ -17,6 +20,7 @@ function UserSignUp() {
     }
 
     try {
+      setIsLoading(true);
       let result = await fetch(`${BACKEND_URL}/user/register`, {
         method: "post",
         body: JSON.stringify({ fullName: name, email, password }),
@@ -27,18 +31,24 @@ function UserSignUp() {
 
       const data = await result.json();
 
-      localStorage.setItem("user", JSON.stringify(data));
       if (data) {
         navigate("/login");
         alert("User registered");
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      setIsLoading(false);
     }
   }
 
   return (
     <>
+      {isLoading && (
+        <div className="loading-container">
+          <HashLoader color="#1D3557" />
+        </div>
+      )}
       <section>
         <div className="userform-wp mt-5 mb-5">
           <div className="container-fluid">

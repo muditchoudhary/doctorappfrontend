@@ -1,8 +1,14 @@
+import { useState } from "react";
+
 import { BACKEND_URL } from "../../gloalConstant";
+
 function Appointment({ appointments, setCurrentApptId, setAppointments }) {
+  const [isLoading, setIsLoading] = useState(false);
+
   async function onCancelAppt(commonId, userId) {
     const auth = JSON.parse(localStorage.getItem("user"));
     try {
+      setIsLoading(true);
       let result = await fetch(`${BACKEND_URL}/doctor/appointment`, {
         method: "delete",
         body: JSON.stringify({
@@ -36,10 +42,12 @@ function Appointment({ appointments, setCurrentApptId, setAppointments }) {
         // console.log(results);
 
         setAppointments(results.appointments);
-        alert("Appointment canceled successfully");
+        // alert("Appointment canceled successfully");
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      setIsLoading(false);
     }
   }
   return (
