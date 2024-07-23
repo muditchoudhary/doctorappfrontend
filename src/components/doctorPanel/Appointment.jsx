@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import { BACKEND_URL } from "../../gloalConstant";
-
 function Appointment({ appointments, setCurrentApptId, setAppointments }) {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -50,11 +49,13 @@ function Appointment({ appointments, setCurrentApptId, setAppointments }) {
       setIsLoading(false);
     }
   }
+
   return (
     <table className="table">
       <thead>
         <tr>
           <th scope="col">User Name</th>
+          <th scope="col">Disease</th>
           <th scope="col">Prescription</th>
           <th scope="col">Edit Appointment</th>
           <th scope="col">Cancel Appointment</th>
@@ -66,6 +67,11 @@ function Appointment({ appointments, setCurrentApptId, setAppointments }) {
             {appointments.map((appt) => (
               <tr id="firstAppointment" key={appt._id}>
                 <td>{appt.userName}</td>
+                <td>
+                  <span className="btn btn-outline-info" data-bs-toggle="modal">
+                    {appt.disease}
+                  </span>
+                </td>
                 <td>
                   <span
                     className="btn btn-outline-info"
