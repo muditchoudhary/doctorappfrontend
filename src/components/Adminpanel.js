@@ -77,6 +77,10 @@ function Adminpanel() {
       const data = await result.json();
 
       if (data) {
+        setDoctorname("");
+        setdocEmail("");
+        setSpecialisation("");
+        setPassword("");
         alert("Doctor Registered Successfully");
         navigate("/admin-panel");
       }
@@ -273,6 +277,7 @@ function Adminpanel() {
                                 pattern="[A-Za-z ]+"
                                 title="Enter the Name"
                                 required
+                                value={doctorname}
                               />
                             </div>
                           </div>
@@ -294,6 +299,7 @@ function Adminpanel() {
                                 pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
                                 title="Please enter a valid email address"
                                 required
+                                value={docEmail}
                               />
                             </div>
                           </div>
@@ -313,6 +319,7 @@ function Adminpanel() {
                                 placeholder="Specialisation"
                                 aria-describedby="basic-addon3 basic-addon4"
                                 required
+                                value={specialisation}
                               />
                             </div>
                           </div>
@@ -334,6 +341,7 @@ function Adminpanel() {
                                 pattern=".{8}"
                                 title="Password Digin only 8 Keywords"
                                 required
+                                value={password}
                               />
                             </div>
                           </div>
