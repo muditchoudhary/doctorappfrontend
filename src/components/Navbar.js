@@ -69,10 +69,12 @@ function NavBAr() {
                   <div>
                     {auth && (auth.doctor || auth.admin) ? (
                       <p>
-                        Welcome!{" "}
-                        {auth.doctor
-                          ? auth.doctor.fullName
-                          : auth.admin.fullName}
+                        {" "}
+                        {auth.doctor ? (
+                          <Link to="/doctor-panel">{auth.doctor.fullName}</Link>
+                        ) : (
+                          <Link to="/admin-panel">{auth.admin.fullName}</Link>
+                        )}
                       </p>
                     ) : (
                       <form className="d-flex" role="search">
