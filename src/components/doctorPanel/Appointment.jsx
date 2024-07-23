@@ -1,4 +1,5 @@
 import { BACKEND_URL } from "../../gloalConstant";
+import Appointments from "./Appointments";
 function Appointment({ appointments, setCurrentApptId, setAppointments }) {
   async function onCancelAppt(commonId, userId) {
     const auth = JSON.parse(localStorage.getItem("user"));
@@ -42,11 +43,13 @@ function Appointment({ appointments, setCurrentApptId, setAppointments }) {
       console.log(error);
     }
   }
+ 
   return (
     <table className="table">
       <thead>
         <tr>
           <th scope="col">User Name</th>
+          <th scope="col">Disease</th>
           <th scope="col">Prescription</th>
           <th scope="col">Edit Appointment</th>
           <th scope="col">Cancel Appointment</th>
@@ -56,8 +59,17 @@ function Appointment({ appointments, setCurrentApptId, setAppointments }) {
         <>
           <tbody>
             {appointments.map((appt) => (
+              
               <tr id="firstAppointment" key={appt._id}>
                 <td>{appt.userName}</td>
+                <td>
+                  <span
+                    className="btn btn-outline-info"
+                    data-bs-toggle="modal" 
+                  >
+                    {appt.disease}
+                  </span>
+                </td>
                 <td>
                   <span
                     className="btn btn-outline-info"

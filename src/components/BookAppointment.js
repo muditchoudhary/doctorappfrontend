@@ -7,6 +7,7 @@ function BookAppointment() {
   const [docList, setDocList] = useState([]);
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
+  const [disease, setDisease] = useState("");
 
   const navigate = useNavigate();
 
@@ -56,6 +57,7 @@ function BookAppointment() {
           doctorId: doctors,
           appointmentOn: date,
           appointmentAt: time,
+          disease: disease,
         }),
         headers: {
           "Content-Type": "application/json",
@@ -130,6 +132,18 @@ function BookAppointment() {
                 <option value="1pm-3pm">1pm - 3pm</option>
                 <option value="6pm-8pm">6pm - 8pm</option>
               </select>
+            </div>
+            <div className="col-md-4 mb-3">
+              <label htmlFor="basic-url" className="form-label">
+                Explain Your Problem
+              </label>
+              <textarea
+                className="disease"
+                cols="4"
+                rows="12"
+                aria-label="Default select example"
+                onChange={(e) => setDisease(e.target.value)}
+              />
             </div>
             <div className="mt-3">
               <button className="cmnbtn" onClick={bookAppoiSubmit}>

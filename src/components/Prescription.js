@@ -93,7 +93,10 @@ export default function Prescription() {
                         <br /> {auth.user.fullName}
                       </p>
                       <p style={{ fontSize: "12px", padding: "19px" }}>
-                        {item.prescription}
+                        {item.prescription !== null
+                          ? item.prescription
+                          : "Prescription is yet to be given"}
+                        {/* {item.prescription} */}
                       </p>
                     </div>
 
@@ -121,7 +124,9 @@ export default function Prescription() {
           </div>
         ))
       ) : (
-        <p>no prescription found</p>
+        <center>
+          <p>no prescription found</p>
+        </center>
       )}
     </>
   );

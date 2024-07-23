@@ -27,7 +27,6 @@ function UserSignUp() {
 
       const data = await result.json();
 
-      localStorage.setItem("user", JSON.stringify(data));
       if (data) {
         navigate("/login");
         alert("User registered");
